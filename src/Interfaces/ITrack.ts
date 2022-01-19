@@ -1,3 +1,6 @@
+import {IArtist} from "./IArtist";
+import {IAlbum} from "./iAlbum";
+
 export interface ITrack {
   id: number;
   title: string;
@@ -5,5 +8,12 @@ export interface ITrack {
   duration: number;
   track_position: string;
   preview: string;
+  rank:number;
+  release_date:string;
+  contributors:string;
+  artist:IArtist;
+  album:IAlbum;
+  md5_image:string;
+
 
 }

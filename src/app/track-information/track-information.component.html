@@ -2,17 +2,33 @@
   <h1><span label label-default>Track</span></h1>
 
   <div class=" mb-4 d-flex" *ngIf="track">
-    <img
-      [src]="track.preview"
-      [title]="track.title"
-      class="blog-img mr-4"
-    />
     <div class="text">
       <h3 class="heading">
         {{ track.title }}
       </h3>
       <div>
-        <span>Extrait : {{ track.preview }}</span>
+        <audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio>
+      </div>
+      <div>
+        <p> lien deezer : {{track.link}}</p>
+      </div>
+      <div>
+        <p> temps : {{track.duration}}</p>
+      </div>
+      <div>
+        <p> top deezer : {{track.rank}}</p>
+      </div>
+      <div>
+        <p> date : {{track.release_date}}</p>
+      </div>
+      <div>
+      <p> contributeurs : {{track.contributors}}</p>
+    </div>
+      <div>
+      <p> artist : {{track.artist}}</p>
+    </div>
+      <div>
+        <p> album : {{track.album}}</p>
       </div>
     </div>
   </div>
