@@ -1,0 +1,19 @@
+<div class="container" *ngIf="track">
+  <h1><span label label-default>Track</span></h1>
+
+  <div class=" mb-4 d-flex" *ngIf="track">
+    <img
+      [src]="track.preview"
+      [title]="track.title"
+      class="blog-img mr-4"
+    />
+    <div class="text">
+      <h3 class="heading">
+        {{ track.title }}
+      </h3>
+      <div>
+        <span>Extrait : {{ track.preview }}</span>
+      </div>
+    </div>
+  </div>
+</div>

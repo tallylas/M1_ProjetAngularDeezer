@@ -2,17 +2,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
-    rel="stylesheet"
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous"
   />
   <title>Projet Deezer Chloé Tali</title>
 </head>
@@ -20,13 +13,10 @@
 <body class="body">
 <nav
   class="navbar navbar-expand-lg navbar-light"
-  style="background: rgb(34,193,195);
-      background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);"
 >
   <a
     class="navbar-brand"
     href="#"
-    style="color: white; font-family: 'Monoton', cursive;"
   >Projet Deezer Chloé Tali</a
   >
   <button
@@ -40,18 +30,12 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#" style="color: white;"
-      >Home <span class="sr-only">(current)</span></a
-      >
-      <a
-        class="nav-item nav-link"
-        routerLink="/artist"
-        target=""
-        style="color: white; "
-      >Artist</a
-      >
+      <a class="nav-item nav-link" href="#">Accueil</a>
+      <a class="nav-item nav-link" routerLink="/artist">Artistes</a>
+      <a class="nav-item nav-link" routerLink="/track">Morceaux</a>
+      <a class="nav-item nav-link" routerLink="/mystery">Mystère</a>
     </div>
   </div>
 </nav>

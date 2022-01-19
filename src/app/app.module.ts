@@ -9,6 +9,11 @@ import { ArtistsResultsComponent } from './artists-results/artists-results.compo
 import { HomepageComponent } from './homepage/homepage.component';
 import {FormsModule} from "@angular/forms";
 import { ArtistInformationComponent } from './artist-information/artist-information.component';
+import {NumberConversionPipe} from "./number-conversion.pipe";
+import { MysteryComponent } from './mystery/mystery.component';
+import { TracksResultsComponent } from './tracks-results/tracks-results.component';
+import { TrackInformationComponent } from './track-information/track-information.component';
+
 
 /*import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -27,13 +32,18 @@ import { ConvertToYearPipe } from './convert-to-year.pipe';*/
     AppComponent,
     ArtistsResultsComponent,
     HomepageComponent,
-    ArtistInformationComponent
+    ArtistInformationComponent,
+    NumberConversionPipe,
+    MysteryComponent,
+    TracksResultsComponent,
+    TrackInformationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

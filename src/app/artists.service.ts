@@ -28,6 +28,7 @@ export class ArtistsService {
       catchError(this.handleError)
     );
   }
+
   getArtist(id: number): Observable<IArtist> {
     this.artistUrl =
       `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/` + id;
@@ -36,6 +37,7 @@ export class ArtistsService {
       catchError(this.handleError)
     );
   }
+
 
   getTopTracks(id: number): Observable<ITrack[]> {
     this.trackUrl =

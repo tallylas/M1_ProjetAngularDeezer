@@ -1,21 +1,22 @@
+<button type="button" class="btn btn-light" (click)="reloadPage()">un autre</button>
 <div class="container" *ngIf="artist">
-      <h1><span label label-default>Artiste</span></h1>
+  <h1><span label label-default>Artiste</span></h1>
 
-    <div class=" mb-4 d-flex" *ngIf="artist">
-      <img
-        [src]="artist.picture_medium"
-        [title]="artist.name"
-        class="blog-img mr-4"
-      />
-      <div class="text">
-        <h3 class="heading">
-          {{ artist.name }}
-        </h3>
-        <div>
-           <span>Nombre de fans : {{ artist.nb_fan | numberConversion }}</span>
-        </div>
+  <div class=" mb-4 d-flex" *ngIf="artist">
+    <img
+      [src]="artist.picture_medium"
+      [title]="artist.name"
+      class="blog-img mr-4"
+    />
+    <div class="text">
+      <h3 class="heading">
+        {{ artist.name }}
+      </h3>
+      <div>
+        <span>Nombre de fans : {{ artist.nb_fan | numberConversion }}</span>
       </div>
     </div>
+  </div>
 </div>
 <br />
 <br />
@@ -41,14 +42,13 @@
       <p class="title">Titre de l'album</p>
       <p>{{ album.title }}</p>
       <p class="title">Nombre de fans</p>
-      <p>{{ album.fans | numberConversion }}</p>
+      <p>{{ album.fans }}</p>
 
       <p class="title">Date de parution</p>
-     <p>{{ album.release_date }}</p>
+      <p>{{ album.release_date }}</p>
 
     </div>
     <br />
   </div>
 </div>
-
 

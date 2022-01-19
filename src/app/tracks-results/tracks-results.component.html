@@ -4,24 +4,22 @@
     <input
       class="form-control form-control-sm ml-3 w-75"
       type="text"
-      [(ngModel)]="searchString"
-      (keyup)="searchArtist()"
-      placeholder="Rechercher un artiste"
+      [(ngModel)]="searchStringTrack"
+      (keyup)="searchTrack()"
+      placeholder="Rechercher un titre"
       aria-label="Search"
     />
   </div>
   <br />
   <br />
   <div class="row">
-    <div class="column" *ngFor="let artist of artists">
+    <div class="column" *ngFor="let track of tracks">
       <div class="card">
-        <img [src]="artist.picture_big" [title]="artist.name" />
-        <p>{{ artist.name }}</p>
-        <p class="title">Total Number of Fans</p>
-        <!--<p>{{ artist.nb_fan | shortNumber }}</p>-->
-
+        <p>{{ track.title }}</p>
+        <p class="title">Extrait</p>
+        <p>{{ track.preview }}</p>
         <p>
-          <button routerLink="/artist/{{ artist.id }}">
+          <button routerLink="/track/{{ track.id }}">
             Détails
           </button>
         </p>
