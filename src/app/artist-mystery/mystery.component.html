@@ -18,20 +18,28 @@
     </div>
   </div>
 </div>
-<br />
-<br />
-<br />
-<br />
+
 <div class="container">
   <h1>Meilleurs morceaux</h1>
-  <div class="item" *ngFor="let track of tracks">
-    {{ track.title }}
+  <div class="item">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Titres</th>
+        <th scope="col">Extraits</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let track of tracks">
+      <tr>
+        <td>{{ track.title }}</td>
+        <td><audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
-<br />
-<br />
-<br />
+<div class="albums">
 <div>
   <h1>Albums</h1>
 </div>
@@ -43,12 +51,10 @@
       <p>{{ album.title }}</p>
       <p class="title">Nombre de fans</p>
       <p>{{ album.fans }}</p>
-
       <p class="title">Date de parution</p>
       <p>{{ album.release_date }}</p>
-
     </div>
     <br />
   </div>
 </div>
-
+</div>

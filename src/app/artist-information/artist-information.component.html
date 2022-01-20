@@ -25,6 +25,7 @@
   <h1>Meilleurs morceaux</h1>
   <div class="item" *ngFor="let track of tracks">
     {{ track.title }}
+    <audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio>
   </div>
 </div>
 

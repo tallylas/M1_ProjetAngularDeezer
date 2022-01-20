@@ -16,8 +16,9 @@
     <div class="column" *ngFor="let track of tracks">
       <div class="card">
         <p>{{ track.title }}</p>
-        <p class="title">Extrait</p>
-        <p>{{ track.preview }}</p>
+        <img [src]="track.album.cover_big" [title]="track.album.label"  />
+        <p class="title">Artiste</p>
+        <p>{{ track.artist.name }}</p>
         <p>
           <button routerLink="/track/{{ track.id }}">
             Détails

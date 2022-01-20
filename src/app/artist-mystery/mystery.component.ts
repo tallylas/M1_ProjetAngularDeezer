@@ -49,10 +49,6 @@ export class MysteryComponent implements OnInit {
       });
   }
 
-  onBack(): void {
-    this.router.navigate(['/artist']);
-  }
-
   reloadPage() {
     window.location.reload();
   }

@@ -10,7 +10,7 @@ export interface ITrack {
   preview: string;
   rank:number;
   release_date:string;
-  contributors:string;
+  contributors:IArtist[];
   artist:IArtist;
   album:IAlbum;
   md5_image:string;
