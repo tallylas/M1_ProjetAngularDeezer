@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {IArtist} from "../../Interfaces/IArtist";
 import {IAlbum} from "../../Interfaces/iAlbum";
-import {ITrack} from "../../Interfaces/iTrack";
+import {ITrack} from "../../Interfaces/ITrack";
 import {TracksService} from "../tracks.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {forkJoin} from "rxjs";

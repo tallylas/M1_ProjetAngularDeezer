@@ -4,7 +4,7 @@ import {ArtistsService} from "../artists.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {forkJoin} from "rxjs";
 import { IAlbum } from 'src/Interfaces/iAlbum';
-import { ITrack } from 'src/Interfaces/iTrack';
+import { ITrack } from 'src/Interfaces/ITrack';
 
 @Component({
   selector: 'app-mystery',

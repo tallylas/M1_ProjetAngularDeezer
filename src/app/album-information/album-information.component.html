@@ -1,0 +1,42 @@
+<div class="container" *ngIf="album">
+  <h1><span label label-default>Album</span></h1>
+
+  <div class=" mb-4 d-flex" *ngIf="album">
+    <img
+      [src]="album.cover_medium"
+      [title]="album.title"
+      class="blog-img mr-4"
+    />
+    <div class="text">
+      <h3 class="heading">
+        {{ album.title }}
+      </h3>
+      <div>
+        <span>Nombre de fans : {{ album.fans | numberConversion }}</span>
+      </div>
+      <div>
+        <span>Nombre de morceaux : {{ album.nb_tracks }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Morceaux de l'album</h1>
+  <div class="item">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Titres</th>
+        <th scope="col">Extraits</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let track of tracks">
+      <tr>
+        <td>{{ track.title }}</td>
+        <td><audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

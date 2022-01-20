@@ -28,7 +28,7 @@
       <div>
         <div class="card">
           <p>{{ track.artist.name }}</p>
-          <img [src]="track.artist.picture" [title]="track.artist.name"  />
+          <a href="http://localhost:4200/artist/{{track.artist.id}}"><img [src]="track.artist.picture" [title]="track.artist.name"  /></a>
           <br />
         </div>
       </div>
@@ -51,7 +51,7 @@
         </div>
         <div>
             <div class="card">
-              <img [src]="track.album.cover_big" [title]="track.album.label"  />
+              <a href="http://localhost:4200/album/{{track.album.id}}"><img [src]="track.album.cover_big" [title]="track.album.label"/></a>
               <p class="title">Titre de l'album</p>
               <p>{{ track.album.title }}</p>
             <br />

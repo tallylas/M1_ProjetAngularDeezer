@@ -1,3 +1,5 @@
+import {ITrack} from "./ITrack";
+
 export interface IAlbum {
   id: number;
   title: string;
@@ -13,4 +15,6 @@ export interface IAlbum {
   fans: string;
   rating: string;
   release_date: string;
+  tracklist: string;
+  tracks:ITrack[];
 }

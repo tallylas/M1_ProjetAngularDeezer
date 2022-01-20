@@ -4,7 +4,7 @@ import { IArtist } from 'src/Interfaces/IArtist';
 import { Observable, throwError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { IAlbum } from 'src/Interfaces/iAlbum';
-import { ITrack } from 'src/Interfaces/iTrack';
+import { ITrack } from 'src/Interfaces/ITrack';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,6 @@ export class ArtistsService {
       '&offset=0&limit=10&type=${artist}';
     return this.http.get(this.ArtistsResultsUrl).pipe(
       map((res: any) => res.data as IArtist[]),
-
       catchError(this.handleError)
     );
   }
@@ -37,7 +36,6 @@ export class ArtistsService {
       catchError(this.handleError)
     );
   }
-
 
   getTopTracks(id: number): Observable<ITrack[]> {
     this.trackUrl =

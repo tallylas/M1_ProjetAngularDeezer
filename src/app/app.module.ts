@@ -15,6 +15,7 @@ import { TracksResultsComponent } from './tracks-results/tracks-results.componen
 import { TrackInformationComponent } from './track-information/track-information.component';
 import { DurationConversionPipe } from './duration-conversion.pipe';
 import { TrackMysteryComponent } from './track-mystery/track-mystery.component';
+import { AlbumInformationComponent } from './album-information/album-information.component';
 
 
 /*import { CommonModule } from '@angular/common';
@@ -40,7 +41,8 @@ import { ConvertToYearPipe } from './convert-to-year.pipe';*/
     TracksResultsComponent,
     TrackInformationComponent,
     DurationConversionPipe,
-    TrackMysteryComponent
+    TrackMysteryComponent,
+    AlbumInformationComponent
   ],
   imports: [
     BrowserModule,

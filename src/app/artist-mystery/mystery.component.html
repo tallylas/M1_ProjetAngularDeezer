@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-light" (click)="reloadPage()">un autre</button>
+<button type="button" class="btn btn-light" (click)="reloadPage()">Découvrir un autre artiste</button>
 <div class="container" *ngIf="artist">
   <h1><span label label-default>Artiste</span></h1>
 
@@ -40,21 +40,21 @@
 </div>
 
 <div class="albums">
-<div>
-  <h1>Albums</h1>
-</div>
-<div class="row">
-  <div class="column" *ngFor="let album of albums">
-    <div class="card">
-      <img [src]="album.cover_big" [title]="album.label"  />
-      <p class="title">Titre de l'album</p>
-      <p>{{ album.title }}</p>
-      <p class="title">Nombre de fans</p>
-      <p>{{ album.fans }}</p>
-      <p class="title">Date de parution</p>
-      <p>{{ album.release_date }}</p>
-    </div>
-    <br />
+  <div>
+    <h1>Albums</h1>
   </div>
-</div>
+  <div class="row">
+    <div class="column" *ngFor="let album of albums">
+      <div class="card">
+        <img [src]="album.cover_big" [title]="album.label"  />
+        <p class="title">Titre de l'album</p>
+        <p>{{ album.title }}</p>
+        <p class="title">Nombre de fans</p>
+        <p>{{ album.fans }}</p>
+        <p class="title">Date de parution</p>
+        <p>{{ album.release_date }}</p>
+      </div>
+      <br />
+    </div>
+  </div>
 </div>

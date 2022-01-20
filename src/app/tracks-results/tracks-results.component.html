@@ -15,15 +15,10 @@
   <div class="row">
     <div class="column" *ngFor="let track of tracks">
       <div class="card">
+        <a href="http://localhost:4200/track/{{track.id}}"><img [src]="track.album.cover_big" [title]="track.album.label"/></a>
         <p>{{ track.title }}</p>
-        <img [src]="track.album.cover_big" [title]="track.album.label"  />
         <p class="title">Artiste</p>
         <p>{{ track.artist.name }}</p>
-        <p>
-          <button routerLink="/track/{{ track.id }}">
-            Détails
-          </button>
-        </p>
       </div>
     </div>
   </div>

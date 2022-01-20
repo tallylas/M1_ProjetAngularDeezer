@@ -17,39 +17,43 @@
       </div>
     </div>
 </div>
-<br />
-<br />
-<br />
-<br />
+
 <div class="container">
   <h1>Meilleurs morceaux</h1>
-  <div class="item" *ngFor="let track of tracks">
-    {{ track.title }}
-    <audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio>
+  <div class="item">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Titres</th>
+        <th scope="col">Extraits</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let track of tracks">
+      <tr>
+        <td>{{ track.title }}</td>
+        <td><audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 
-<br />
-<br />
-<br />
-<div>
-  <h1>Albums</h1>
-</div>
-<div class="row">
-  <div class="column" *ngFor="let album of albums">
-    <div class="card">
-      <img [src]="album.cover_big" [title]="album.label"  />
-      <p class="title">Titre de l'album</p>
-      <p>{{ album.title }}</p>
-      <p class="title">Nombre de fans</p>
-      <p>{{ album.fans | numberConversion }}</p>
-
-      <p class="title">Date de parution</p>
-     <p>{{ album.release_date }}</p>
-
+<div class="albums">
+  <div>
+    <h1>Albums</h1>
+  </div>
+  <div class="row">
+    <div class="column" *ngFor="let album of albums">
+      <div class="card">
+        <img [src]="album.cover_big" [title]="album.label"  />
+        <p class="title">Titre de l'album</p>
+        <p>{{ album.title }}</p>
+        <p class="title">Nombre de fans</p>
+        <p>{{ album.fans }}</p>
+        <p class="title">Date de parution</p>
+        <p>{{ album.release_date }}</p>
+      </div>
+      <br />
     </div>
-    <br />
   </div>
 </div>
-
-

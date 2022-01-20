@@ -3,7 +3,7 @@ import { IArtist } from 'src/Interfaces/IArtist';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IAlbum } from 'src/Interfaces/iAlbum';
 import { forkJoin } from 'rxjs';
-import { ITrack } from 'src/Interfaces/iTrack';
+import { ITrack } from 'src/Interfaces/ITrack';
 import {ArtistsService} from "../artists.service";
 
 @Component({
@@ -45,9 +45,6 @@ export class ArtistInformationComponent implements OnInit {
         },
         error: err => (this.errorMessage = err)
       });
-  }
-  onBack(): void {
-    this.router.navigate(['/artist']);
   }
 
 }

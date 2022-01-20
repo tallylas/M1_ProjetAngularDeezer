@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {IArtist} from "../../Interfaces/IArtist";
 import {IAlbum} from "../../Interfaces/iAlbum";
 import {ITrack} from "../../Interfaces/ITrack";
-import {TracksService} from "../tracks.service";
+import {AlbumsService} from "../albums.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {forkJoin} from "rxjs";
 
 @Component({
-  selector: 'app-track-information',
-  templateUrl: './track-information.component.html',
-  styleUrls: ['./track-information.component.scss']
+  selector: 'app-album-information',
+  templateUrl: './album-information.component.html',
+  styleUrls: ['./album-information.component.scss']
 })
-export class TrackInformationComponent implements OnInit {
+export class AlbumInformationComponent implements OnInit {
 
-  artist: IArtist | undefined;
-  albums: IAlbum[] = [];
-  track: ITrack | undefined;
+  album: IAlbum | undefined;
+  tracks: ITrack[] = [];
   errorMessage: string = "";
   constructor(
-    private tracksService: TracksService,
+    private albumsService: AlbumsService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -27,23 +25,22 @@ export class TrackInformationComponent implements OnInit {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;
-      this.GetTrackDetails(id);
+      this.getAlbumDetails(id);
     }
   }
-  GetTrackDetails(id: number) {
+  getAlbumDetails(id: number) {
     forkJoin([
-      this.tracksService.getTrack(id)
+      this.albumsService.getAlbum(id),
+      this.albumsService.getTracks(id)
     ])
       .pipe()
       .subscribe({
         next: Results => {
-          (this.track = Results[0])
+          (this.album = Results[0]),
+            (this.tracks = Results[1]);
         },
         error: err => (this.errorMessage = err)
       });
-  }
-  onBack(): void {
-    this.router.navigate(['/track']);
   }
 
 }

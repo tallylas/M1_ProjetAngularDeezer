@@ -15,16 +15,10 @@
   <div class="row">
     <div class="column" *ngFor="let artist of artists">
       <div class="card">
-        <img [src]="artist.picture_big" [title]="artist.name" />
+          <a href="http://localhost:4200/artist/{{artist.id}}"><img [src]="artist.picture_big" [title]="artist.name"/></a>
         <p>{{ artist.name }}</p>
-        <p class="title">Total Number of Fans</p>
-        <!--<p>{{ artist.nb_fan | shortNumber }}</p>-->
-
-        <p>
-          <button routerLink="/artist/{{ artist.id }}">
-            Détails
-          </button>
-        </p>
+        <p class="title">Nombre de fans</p>
+        <p>{{ artist.nb_fan | numberConversion }}</p>
       </div>
     </div>
   </div>

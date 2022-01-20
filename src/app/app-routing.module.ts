@@ -7,6 +7,7 @@ import {MysteryComponent} from "./artist-mystery/mystery.component";
 import {TracksResultsComponent} from "./tracks-results/tracks-results.component";
 import {TrackInformationComponent} from "./track-information/track-information.component";
 import {TrackMysteryComponent} from "./track-mystery/track-mystery.component";
+import {AlbumInformationComponent} from "./album-information/album-information.component";
 
 //const routes: Routes = [];
 
@@ -17,6 +18,7 @@ const routes : Routes = [
   {path : 'artist/:id', component : ArtistInformationComponent},
   {path : 'track', component : TracksResultsComponent},
   {path : 'track/:id', component : TrackInformationComponent},
+  {path : 'album/:id', component : AlbumInformationComponent},
   {path : '', component : HomepageComponent},
   {path : '**', component : HomepageComponent}
 ]

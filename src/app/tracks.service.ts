@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { IArtist } from 'src/Interfaces/IArtist';
 import { Observable, throwError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { IAlbum } from 'src/Interfaces/iAlbum';
-import { ITrack } from 'src/Interfaces/iTrack';
+import { ITrack } from 'src/Interfaces/ITrack';
 
 @Injectable({
   providedIn: 'root'

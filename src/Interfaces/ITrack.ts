@@ -14,6 +14,5 @@ export interface ITrack {
   artist:IArtist;
   album:IAlbum;
   md5_image:string;
-
-
+  share:string;
 }
