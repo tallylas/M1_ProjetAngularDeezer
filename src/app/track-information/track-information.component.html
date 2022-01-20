@@ -26,10 +26,23 @@
     </div>
       <div>
       <p> artist : {{track.artist}}</p>
-    </div>
-      <div>
-        <p> album : {{track.album}}</p>
       </div>
-    </div>
+        <div>
+          <h1>Albums</h1>
+        </div>
+
+        <div>
+            <div class="card">
+              <img [src]="track.album.cover_big" [title]="track.album.label"  />
+              <p class="title">Titre de l'album</p>
+              <p>{{ track.album.title }}</p>
+              <p class="title">Nombre de fans</p>
+              <p>{{ track.album.fans | numberConversion }}</p>
+
+              <p class="title">Date de parution</p>
+              <p>{{ track.album.release_date }}</p>
+            <br />
+          </div>
+        </div>
   </div>
 </div>
