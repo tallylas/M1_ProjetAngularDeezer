@@ -12,6 +12,7 @@ import { ITrack } from 'src/Interfaces/ITrack';
 export class ArtistsService {
 
   private ArtistsResultsUrl: string = "";
+  private ArtistsResultsUrlToDiscover: string = "";
   private artistUrl: string = "";
   private albumsUrl: string = "";
   private trackUrl: string = "";

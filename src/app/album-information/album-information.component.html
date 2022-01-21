@@ -13,9 +13,6 @@
         {{ album.title }}
       </h3>
       <div>
-        <p><a href="{{album.link}}" target="_blank">Écouter l'album sur Deezer</a></p>
-      </div>
-      <div>
         <span>Nombre de fans : {{ album.fans | numberConversion }}</span>
       </div>
       <div>
@@ -24,6 +21,10 @@
     </div>
   </div>
 </div>
+
+  <div class="center">
+    <p><a href="{{album.link}}" target="_blank">Écouter l'album sur Deezer</a></p>
+  </div>
 
 <div class="container">
   <h1>Morceaux de l'album</h1>

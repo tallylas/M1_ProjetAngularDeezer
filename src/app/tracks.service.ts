@@ -10,6 +10,7 @@ import { ITrack } from 'src/Interfaces/ITrack';
 export class TracksService {
 
   private TracksResultsUrl: string = "";
+  private TracksToDiscoverUrl: string = "";
   private trackUrl: string = "";
   constructor(private http: HttpClient) {}
 
@@ -21,6 +22,16 @@ export class TracksService {
     return this.http.get(this.TracksResultsUrl).pipe(
       map((res: any) => res.data as ITrack[]),
 
+      catchError(this.handleError)
+    );
+  }
+
+  getTrackListToDiscover(): Observable<ITrack[]> {
+    //this.TracksToDiscoverUrl =
+      //"https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=e&limit=200";
+    this.TracksToDiscoverUrl ="https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=track:'Celebration'&limit=200";
+    return this.http.get(this.TracksToDiscoverUrl).pipe(
+      map((res: any) => res.data as ITrack[]),
       catchError(this.handleError)
     );
   }

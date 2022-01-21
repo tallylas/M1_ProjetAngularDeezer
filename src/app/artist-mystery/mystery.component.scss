@@ -53,7 +53,7 @@ button {
 a {
   text-decoration: none;
   font-size: 22px;
-  color: black;
+  color: #4595DC;
 }
 
 button:hover,
@@ -113,7 +113,16 @@ div.image{
   margin-left:40%;
   padding-bottom:100%;
 }
-body{
 
+body{
   background-color:#E0F2F7;
+}
+
+.center{
+  text-align:center;
+}
+
+.text{
+  margin-left:20px;
+  width:100%;
 }

@@ -1,10 +1,19 @@
 <body>
   <div>
-  Merci Deezer pour les données<br>
-  Insérer image ou autre
+  Merci Deezer pour les données
     <div class="hero-text">
-      <h1>Welcome to Deezer</h1>
-      <button routerLink="/artist" target="">Search Artist</button>
+      <h1>Welcome to DiskOver</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column" *ngFor="let track of tracks">
+      <div class="card" *ngIf="track.release_date == '2022-01-07'">
+        <!--<a href="http://localhost:4200/artist/{{track.id}}"><img [src]="track.picture" [title]="track.title"/></a>-->
+        <p>{{ track.title }}</p>
+        <p class="title">Nombre de fans de l'artiste</p>
+        <p>{{ track.artist.nb_fan | numberConversion }}</p>
+      </div>
     </div>
   </div>
 
