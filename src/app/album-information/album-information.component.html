@@ -1,4 +1,4 @@
-<div *ngIf="album">
+<body><div *ngIf="album">
 <div class="container">
   <h1><span label label-default>Album</span></h1>
 
@@ -46,6 +46,12 @@
 </div>
 </div>
 
-<div *ngIf != "album">
+
+<div *ngIf="isLoading==true" class="image" >
+  <img src="assets/icons/waitingGif.gif"/>
+</div>
+<div *ngIf="isLoading==false && album== undefined ">
   <app-error404></app-error404>
 </div>
+
+</body>

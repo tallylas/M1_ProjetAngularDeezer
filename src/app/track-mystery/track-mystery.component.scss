@@ -85,7 +85,6 @@ h1 {
   align-items: center;
   margin-top: 10px;
   border: 2px;
-
   border-radius: 15px;
 
 }
@@ -101,4 +100,15 @@ h1 {
 
 a{
   color: blue;
+}
+
+div.image{
+  height:400px;
+  width:400px;
+  margin-left:40%;
+  padding-bottom:100%;
+}
+body{
+
+  background-color:#E0F2F7;
 }

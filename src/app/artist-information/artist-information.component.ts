@@ -17,6 +17,8 @@ export class ArtistInformationComponent implements OnInit {
   albums: IAlbum[] = [];
   tracks: ITrack[] = [];
   errorMessage: string = "";
+  isLoading:boolean=true;
+
   constructor(
     private artistsService: ArtistsService,
     private route: ActivatedRoute,
@@ -42,6 +44,7 @@ export class ArtistInformationComponent implements OnInit {
           (this.artist = Results[0]),
             (this.albums = Results[1]),
             (this.tracks = Results[2]);
+          this.isLoading=false;
         },
         error: err => (this.errorMessage = err)
       });

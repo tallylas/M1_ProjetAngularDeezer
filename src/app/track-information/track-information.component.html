@@ -1,4 +1,5 @@
-<div class="container" *ngIf="track">
+<body>
+  <div class="container" *ngIf="track">
   <h1><span label label-default>Track</span></h1>
 
   <div class=" mb-4 d-flex" *ngIf="track">
@@ -22,18 +23,18 @@
         <p> Date de parution : {{track.release_date}}</p>
       </div>
 
-      <div>
+      <div class="container">
         <h1>Artiste</h1>
       </div>
       <div>
         <div class="card">
-          <p>{{ track.artist.name }}</p>
           <a href="http://localhost:4200/artist/{{track.artist.id}}"><img [src]="track.artist.picture" [title]="track.artist.name"  /></a>
+          <p>{{ track.artist.name }}</p>
           <br />
         </div>
       </div>
 
-      <div *ngIf="track.contributors.length > 1">
+      <div class="container" *ngIf="track.contributors.length > 1">
         <h1>Contributeurs</h1>
       <div class="row">
         <div class="column" *ngFor="let contributor of track.contributors">
@@ -46,7 +47,7 @@
       </div>
       </div>
 
-        <div>
+        <div class="container">
           <h1>Album</h1>
         </div>
         <div>
@@ -59,7 +60,11 @@
         </div>
   </div>
 </div>
-
-  <div *ngIf != "track">
+    <div *ngIf="isLoading==true" class="image" >
+      <img src="assets/icons/waitingGif.gif"/>
+    </div>
+  <div *ngIf="isLoading==false && track== undefined ">
     <app-error404></app-error404>
   </div>
+  </div>
+</body>

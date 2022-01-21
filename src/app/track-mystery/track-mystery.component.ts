@@ -18,6 +18,7 @@ export class TrackMysteryComponent implements OnInit {
   album: IAlbum | undefined;
   tracks: ITrack[] = [];
   errorMessage: string = "";
+  isLoading:boolean=true;
 
   constructor(
     private tracksService: TracksService,
@@ -41,6 +42,7 @@ export class TrackMysteryComponent implements OnInit {
       .subscribe({
         next: Results => {
           (this.track = Results[0]);
+          this.isLoading=false;
         },
         error: err => (this.errorMessage = err)
       });

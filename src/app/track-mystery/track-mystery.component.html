@@ -1,3 +1,4 @@
+<body>
 <button type="button" class="btn btn-light" (click)="reloadPage()">Découvrir un autre morceau</button>
 <div class="container" *ngIf="track">
   <h1><span label label-default>Track</span></h1>
@@ -24,8 +25,8 @@
       </div>
       <div>
         <div class="card">
-          <p>{{ track.artist.name }}</p>
           <a href="http://localhost:4200/artist/{{track.artist.id}}"><img [src]="track.artist.picture" [title]="track.artist.name"  /></a>
+          <p>{{ track.artist.name }}</p>
           <br />
         </div>
       </div>
@@ -58,6 +59,11 @@
   </div>
 </div>
 
-<div *ngIf != "track">
+<div *ngIf="isLoading==true" class="image" >
+  <img src="assets/icons/waitingGif.gif"/>
+</div>
+<div *ngIf="isLoading==false && track== undefined ">
   <app-error404></app-error404>
 </div>
+
+</body>

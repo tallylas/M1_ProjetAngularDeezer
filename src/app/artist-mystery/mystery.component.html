@@ -1,9 +1,10 @@
-<button type="button" class="btn btn-light" (click)="reloadPage()">Découvrir un autre artiste</button>
-<div *ngIf="artist">
-<div class="container" *ngIf="artist">
+<body>
+  <button type="button" class="btn btn-light" (click)="reloadPage()">Découvrir un autre artiste</button>
+<div *ngIf="artist!=undefined && isLoading==false" >
+<div class="container">
   <h1><span label label-default>Artiste</span></h1>
 
-  <div class=" mb-4 d-flex" *ngIf="artist">
+  <div class=" mb-4 d-flex">
     <img
       [src]="artist.picture_medium"
       [title]="artist.name"
@@ -64,6 +65,10 @@
 </div>
 </div>
 
-<div *ngIf != "artist">
+  <div *ngIf="isLoading==true" class="image" >
+    <img src="assets/icons/waitingGif.gif"/>
+  </div>
+<div *ngIf="isLoading==false && artist== undefined ">
   <app-error404></app-error404>
 </div>
+</body>
