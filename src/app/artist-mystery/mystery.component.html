@@ -15,6 +15,9 @@
       <div>
         <span>Nombre de fans : {{ artist.nb_fan | numberConversion }}</span>
       </div>
+      <div>
+        <p><a href="{{artist.link}}" target="_blank">voir l'artiste sur Deezer</a></p>
+      </div>
     </div>
   </div>
 </div>
@@ -31,7 +34,7 @@
       </thead>
       <tbody *ngFor="let track of tracks">
       <tr>
-        <td>{{ track.title }}</td>
+        <td><a href="http://localhost:4200/track/{{track.id}}">{{ track.title }}</a></td>
         <td><audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio></td>
       </tr>
       </tbody>

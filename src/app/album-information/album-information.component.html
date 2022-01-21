@@ -12,6 +12,9 @@
         {{ album.title }}
       </h3>
       <div>
+        <p><a href="{{album.link}}" target="_blank">Écouter l'album sur Deezer</a></p>
+      </div>
+      <div>
         <span>Nombre de fans : {{ album.fans | numberConversion }}</span>
       </div>
       <div>
@@ -33,7 +36,7 @@
       </thead>
       <tbody *ngFor="let track of tracks">
       <tr>
-        <td>{{ track.title }}</td>
+        <td><a href="http://localhost:4200/track/{{track.id}}">{{ track.title }}</a></td>
         <td><audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio></td>
       </tr>
       </tbody>

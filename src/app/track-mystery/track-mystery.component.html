@@ -10,7 +10,7 @@
         <audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio>
       </div>
       <div>
-        <p><a href="{{track.link}}">Écouter et voir les paroles</a></p>
+        <p><a href="{{track.link}}" target="_blank">Écouter et voir les paroles</a></p>
       </div>
       <div>
         <p> Durée : {{track.duration | durationConversion }}</p>
@@ -36,7 +36,7 @@
           <div class="column" *ngFor="let contributor of track.contributors">
             <div class="card">
               <p>{{ contributor.name }}</p>
-              <img [src]="contributor.picture" [title]="contributor.name"  />
+              <a href="http://localhost:4200/artist/{{contributor.id}}"><img [src]="contributor.picture" [title]="contributor.name"  /></a>
             </div>
             <br />
           </div>
