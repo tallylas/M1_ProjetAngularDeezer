@@ -26,10 +26,12 @@ export class TracksService {
     );
   }
 
-  getTrackListToDiscover(): Observable<ITrack[]> {
-    //this.TracksToDiscoverUrl =
-      //"https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=e&limit=200";
-    this.TracksToDiscoverUrl ="https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=track:'Celebration'&limit=200";
+  getTrackListToDiscover(str: string): Observable<ITrack[]> {
+    this.TracksToDiscoverUrl =
+      'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=' +
+      str +
+      '&limit=100';
+    //this.TracksToDiscoverUrl ="https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=track:'e'&limit=200";
     return this.http.get(this.TracksToDiscoverUrl).pipe(
       map((res: any) => res.data as ITrack[]),
       catchError(this.handleError)

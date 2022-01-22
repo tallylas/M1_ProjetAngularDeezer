@@ -11,7 +11,6 @@ export class TracksResultsComponent {
 
   errorMessage = '';
   tracks: ITrack[] = [];
-
   searchStringTrack: string = "";
 
   constructor(private tracksService: TracksService) {}
