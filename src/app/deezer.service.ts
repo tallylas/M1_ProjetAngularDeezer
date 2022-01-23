@@ -8,7 +8,7 @@ export class DeezerService {
 
   //public response : any;
 
-  constructor(private http : HttpClient) { }
+  public constructor(private http : HttpClient) { }
 
   public getArtist(){
     const url : string = `https://cors-anywhere.herokuapp.com/http://api.deezer.com/search/artist'`;

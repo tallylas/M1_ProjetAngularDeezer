@@ -14,7 +14,7 @@ export class AlbumsService {
   private tracksUrl: string = "";
   constructor(private http: HttpClient) {}
 
-  getAlbum(id: number): Observable<IAlbum> {
+  public getAlbum(id: number): Observable<IAlbum> {
     this.albumUrl =
       `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/` + id;
     return this.http.get(this.albumUrl).pipe(
@@ -24,7 +24,7 @@ export class AlbumsService {
   }
 
 
-  getTracks(id: number): Observable<ITrack[]> {
+  public getTracks(id: number): Observable<ITrack[]> {
     this.tracksUrl = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}/tracks&offset=0`;
     return this.http.get(this.tracksUrl).pipe(
       map((res: any) => res.data as ITrack[]),

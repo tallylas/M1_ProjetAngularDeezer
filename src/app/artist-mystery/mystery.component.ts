@@ -13,11 +13,11 @@ import { ITrack } from 'src/Interfaces/ITrack';
 })
 export class MysteryComponent implements OnInit {
 
-  artist: IArtist | undefined;
-  albums: IAlbum[] = [];
-  tracks: ITrack[] = [];
-  errorMessage: string = "";
-  isLoading:boolean=true;
+  public artist: IArtist | undefined;
+  public albums: IAlbum[] = [];
+  public tracks: ITrack[] = [];
+  public errorMessage: string = "";
+  public isLoading:boolean=true;
 
   constructor(
     private artistsService: ArtistsService,

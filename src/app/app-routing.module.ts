@@ -9,8 +9,6 @@ import {TrackInformationComponent} from "./track-information/track-information.c
 import {TrackMysteryComponent} from "./track-mystery/track-mystery.component";
 import {AlbumInformationComponent} from "./album-information/album-information.component";
 
-//const routes: Routes = [];
-
 const routes : Routes = [
   {path : 'artistMystery', component : MysteryComponent},
   {path : 'trackMystery', component : TrackMysteryComponent},

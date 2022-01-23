@@ -8,9 +8,9 @@ import {delay} from "rxjs";
 })
 export class Error404Component implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.wait(5000);
   }
   private wait( ms: number){

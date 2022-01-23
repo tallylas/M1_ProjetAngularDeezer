@@ -9,8 +9,8 @@ import {ArtistsService} from "../artists.service";
 })
 export class ArtistsResultsComponent { //implements OnInit {
 
-  errorMessage = '';
-  artists: IArtist[] = [];
+  public errorMessage = '';
+  public artists: IArtist[] = [];
 
   searchString: string = "";
 

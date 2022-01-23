@@ -9,9 +9,9 @@ import {ITrack} from "../../Interfaces/ITrack";
 })
 export class TracksResultsComponent {
 
-  errorMessage = '';
-  tracks: ITrack[] = [];
-  searchStringTrack: string = "";
+  public errorMessage = '';
+  public tracks: ITrack[] = [];
+  public searchStringTrack: string = "";
 
   constructor(private tracksService: TracksService) {}
 

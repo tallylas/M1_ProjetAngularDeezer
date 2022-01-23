@@ -11,27 +11,29 @@ import { TracksService } from '../tracks.service';
 })
 export class HomepageComponent implements OnInit {
 
-  errorMessage = '';
-  tracks: ITrack[] = [];
-  searchStringButton: string = "";
-  isLoading:boolean=false;
-  afficherInfos:boolean=false;
-  combinaison:number=0;
-  c1:boolean=false;
-  c2:boolean=false;
-  c3:boolean=false;
-  c4:boolean=false;
-  c5:boolean=false;
-  c6:boolean=false;
-  c7:boolean=false;
-  c8:boolean=false;
-  c9:boolean=false;
-  c10:boolean=false;
+  public errorMessage = '';
+  public tracks: ITrack[] = [];
+  public searchStringButton: string = "";
+  public isLoading:boolean=false;
+  public afficherInfos:boolean=false;
+  public combinaison:number=0;
+  public c1:boolean=false;
+  public c2:boolean=false;
+  public c3:boolean=false;
+  public c4:boolean=false;
+  public c5:boolean=false;
+  public c6:boolean=false;
+  public c7:boolean=false;
+  public c8:boolean=false;
+  public c9:boolean=false;
+  public c10:boolean=false;
 
-  constructor(private tracksService : TracksService
+  public constructor(private tracksService : TracksService
   ) {}
 
-  ngOnInit(): void {
+
+
+  public ngOnInit(): void {
     //Tirer une combinaison au hasard
     this.combinaison = Math.floor(Math.random() * (9)) + 1;
 
@@ -84,14 +86,14 @@ export class HomepageComponent implements OnInit {
 
   }
 
-  searchButton(str: string) {
+  public searchButton(str: string) {
     this.isLoading=true;
     this.searchStringButton = str;
     this.resultButton();
     this.afficherInfos = true;
   }
 
-  resultButton(){
+  public resultButton(){
     this.tracksService.getTrackListToDiscover(this.searchStringButton).subscribe({
       next: tracks => {
         this.tracks = tracks;

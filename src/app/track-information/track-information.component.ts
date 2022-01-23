@@ -13,11 +13,11 @@ import {forkJoin} from "rxjs";
 })
 export class TrackInformationComponent implements OnInit {
 
-  artist: IArtist | undefined;
-  albums: IAlbum[] = [];
-  track: ITrack | undefined;
-  errorMessage: string = "";
-  isLoading:boolean=true;
+  public artist: IArtist | undefined;
+  public albums: IAlbum[] = [];
+  public track: ITrack | undefined;
+  public errorMessage: string = "";
+  public isLoading:boolean=true;
 
   constructor(
     private tracksService: TracksService,

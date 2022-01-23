@@ -12,18 +12,18 @@ import {forkJoin} from "rxjs";
 })
 export class AlbumInformationComponent implements OnInit {
 
-  album: IAlbum | undefined;
-  tracks: ITrack[] = [];
-  errorMessage: string = "";
-  isLoading:boolean=true;
+  public album: IAlbum | undefined;
+  public tracks: ITrack[] = [];
+  public errorMessage: string = "";
+  public isLoading:boolean=true;
 
-  constructor(
+  public constructor(
     private albumsService: AlbumsService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;

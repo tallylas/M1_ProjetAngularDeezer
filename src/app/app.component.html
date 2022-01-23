@@ -44,36 +44,3 @@
 <router-outlet></router-outlet>
 </body>
 </html>
-
-<!--prof
-{{response.data[0].artist.name}}-->
-
-<!--
-response = connection.post do |req|
-  req.url "user/#{user_id}/playlists"
-  req.headers['Authorization'] = "Bearer #{acces_token}"
-  req.headers['Content-Type'] = 'application/json'
-  req.body = {
-    title: name,
-    public: public
-  }.to_json
-end
--->
-
-<!--
-<div>
-  <div *ngFor="let artist of artists">
-    <div>
-      <p>{{ artist.name }}</p>
-      <p class="title">Total Number of Fans</p>
-      <p>{{ artist.nb_fan | shortNumber }}</p>
-
-      <p>
-        <button routerLink="/artist/{{ artist.id }}">
-          View Artist Details
-        </button>
-      </p>
-    </div>
-  </div>
-</div>
--->

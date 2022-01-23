@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'numberConversion'
 })
 export class NumberConversionPipe implements PipeTransform {
-  transform(value: any, args?: any): any {
+  public transform(value: any, args?: any): any {
     if (value === null) {
       return null;
     }

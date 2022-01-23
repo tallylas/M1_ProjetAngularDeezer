@@ -13,12 +13,12 @@ import {forkJoin} from "rxjs";
 })
 export class TrackMysteryComponent implements OnInit {
 
-  track: ITrack | undefined;
-  artist: IArtist | undefined;
-  album: IAlbum | undefined;
-  tracks: ITrack[] = [];
-  errorMessage: string = "";
-  isLoading:boolean=true;
+  public track: ITrack | undefined;
+  public artist: IArtist | undefined;
+  public album: IAlbum | undefined;
+  public tracks: ITrack[] = [];
+  public errorMessage: string = "";
+  public isLoading:boolean=true;
 
   constructor(
     private tracksService: TracksService,
