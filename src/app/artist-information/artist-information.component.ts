@@ -29,10 +29,10 @@ export class ArtistInformationComponent implements OnInit {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;
-      this.GetArtistDetails(id);
+      this.getArtistDetails(id);
     }
   }
-  GetArtistDetails(id: number) {
+  getArtistDetails(id: number) {
     forkJoin([
       this.artistsService.getArtist(id),
       this.artistsService.getAlbums(id),

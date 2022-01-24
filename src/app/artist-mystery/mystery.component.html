@@ -2,7 +2,7 @@
   <button type="button" class="btn btn-light" (click)="reloadPage()">Découvrir un autre artiste</button>
 <div *ngIf="artist!=undefined && isLoading==false" >
 <div class="container">
-  <h1><span label label-default>Artiste</span></h1>
+  <h1><span label label-default>{{ artist.name }}</span></h1>
 
   <div class=" mb-4 d-flex">
     <img
@@ -11,9 +11,6 @@
       class="blog-img mr-4"
     />
     <div class="text">
-      <h3 class="heading">
-        {{ artist.name }}
-      </h3>
       <div>
         <span>Nombre de fans : {{ artist.nb_fan | numberConversion }}</span>
       </div>
@@ -60,7 +57,6 @@
         <p class="title">Date de parution</p>
         <p>{{ album.release_date }}</p>
       </div>
-      <br />
     </div>
   </div>
 </div>

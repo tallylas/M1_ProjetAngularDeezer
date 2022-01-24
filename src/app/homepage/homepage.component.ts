@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { IArtist } from 'src/Interfaces/IArtist';
 import { ITrack } from 'src/Interfaces/ITrack';
 import { TracksService } from '../tracks.service';
-//import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-homepage',
@@ -28,10 +27,7 @@ export class HomepageComponent implements OnInit {
   public c9:boolean=false;
   public c10:boolean=false;
 
-  public constructor(private tracksService : TracksService
-  ) {}
-
-
+  public constructor(private tracksService : TracksService) {}
 
   public ngOnInit(): void {
     //Tirer une combinaison au hasard

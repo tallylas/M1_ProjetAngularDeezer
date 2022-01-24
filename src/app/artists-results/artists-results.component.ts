@@ -7,7 +7,7 @@ import {ArtistsService} from "../artists.service";
   templateUrl: './artists-results.component.html',
   styleUrls: ['./artists-results.component.scss']
 })
-export class ArtistsResultsComponent { //implements OnInit {
+export class ArtistsResultsComponent {
 
   public errorMessage = '';
   public artists: IArtist[] = [];
@@ -24,8 +24,5 @@ export class ArtistsResultsComponent { //implements OnInit {
       error: err => (this.errorMessage = err)
     });
   }
-
-  /*ngOnInit(): void {
-  }*/
 
 }

@@ -5,14 +5,14 @@
 </div>
 
 <h1>Les mots du moment</h1>
-<h2>Découvrez de nouvelles musiques avec DiskOver</h2>
 
+<div class="button-div">
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Soleil')" *ngIf="c1==true || c6==true || c9==true">Soleil</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Nature')" *ngIf="c2==true || c7==true || c9==true">Nature</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Amour')" *ngIf="c3==true || c6==true || c1==true || c4==true">Amour</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Joli')" *ngIf="c4==true || c8==true || c9==true">Joli</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Bateau')" *ngIf="c5==true || c8==true || c10==true">Bateau</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Oiseau')" *ngIf="c1==true || c6==true || c3==true">Oiseau</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Nuit')" *ngIf="c1==true || c6==true || c3==true">Nuit</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Sport')" *ngIf="c2==true || c7==true || c1==true || c10==true">Sport</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Plage')" *ngIf="c3==true || c7==true || c4==true || c5==true">Plage</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Océan')" *ngIf="c4==true || c6==true || c2==true || c10==true">Océan</button>
@@ -22,6 +22,7 @@
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Mélancolie')" *ngIf="c3==true || c8==true || c9==true">Mélancolie</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Heureux')" *ngIf="c4==true || c7==true || c5==true">Heureux</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Fierté')" *ngIf="c5==true || c3==true || c8==true">Fierté</button>
+</div>
 
   <div class="row" *ngIf="afficherInfos==true">
     <div *ngIf="isLoading==false">

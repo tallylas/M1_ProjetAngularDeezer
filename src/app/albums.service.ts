@@ -35,9 +35,9 @@ export class AlbumsService {
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
-      errorMessage = `An error occurred: ${err.error.message}`;
+      errorMessage = `Une erreur est apparue : ${err.error.message}`;
     } else {
-      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+      errorMessage = `Le serveur a retourné le code : ${err.status}, le message d'erreur est : ${err.message}`;
     }
 
     return throwError(errorMessage);

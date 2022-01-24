@@ -1,6 +1,6 @@
 <body><div *ngIf="album">
 <div class="container">
-  <h1><span label label-default>Album</span></h1>
+  <h1><span label label-default>{{ album.title }}</span></h1>
 
   <div class=" mb-4 d-flex" *ngIf="album">
     <img
@@ -9,9 +9,6 @@
       class="blog-img mr-4"
     />
     <div class="text">
-      <h3 class="heading">
-        {{ album.title }}
-      </h3>
       <div>
         <span>Nombre de fans : {{ album.fans | numberConversion }}</span>
       </div>

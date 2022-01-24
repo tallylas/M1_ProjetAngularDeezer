@@ -55,4 +55,3 @@ export class MysteryComponent implements OnInit {
     window.location.reload();
   }
 }
-

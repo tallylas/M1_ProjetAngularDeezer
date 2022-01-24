@@ -21,7 +21,6 @@ export class TracksService {
       '&offset=0&limit=10&type=${track}';
     return this.http.get(this.TracksResultsUrl).pipe(
       map((res: any) => res.data as ITrack[]),
-
       catchError(this.handleError)
     );
   }
@@ -31,7 +30,6 @@ export class TracksService {
       'https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=' +
       str +
       '&limit=100';
-    //this.TracksToDiscoverUrl ="https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=track:'e'&limit=200";
     return this.http.get(this.TracksToDiscoverUrl).pipe(
       map((res: any) => res.data as ITrack[]),
       catchError(this.handleError)
@@ -50,9 +48,9 @@ export class TracksService {
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
-      errorMessage = `An error occurred: ${err.error.message}`;
+      errorMessage = `Une erreur est apparue : ${err.error.message}`;
     } else {
-      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+      errorMessage = `Le serveur a retourné le code : ${err.status}, le message d'erreur est : ${err.message}`;
     }
 
     return throwError(errorMessage);
