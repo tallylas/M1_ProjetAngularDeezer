@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TracksService} from "../tracks.service";
 import {ITrack} from "../../Interfaces/ITrack";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tracks-results',
@@ -9,18 +10,21 @@ import {ITrack} from "../../Interfaces/ITrack";
 })
 export class TracksResultsComponent {
 
-  public errorMessage = '';
+  private errorMessage = '';
   public tracks: ITrack[] = [];
   public searchStringTrack: string = "";
 
-  constructor(private tracksService: TracksService) {}
+  public constructor(private tracksService: TracksService, private router: Router) {}
 
-  searchTrack() {
+  public searchTrack() {
     this.tracksService.getTrackList(this.searchStringTrack).subscribe({
       next: tracks => {
         this.tracks = tracks;
       },
-      error: err => (this.errorMessage = err)
+      error: err => {
+        this.errorMessage = err,
+          this.router.navigate(['/error404']);
+      }
     });
   }
 

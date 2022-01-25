@@ -2,7 +2,7 @@
 <div class="container">
   <h1><span label label-default>{{ album.title }}</span></h1>
 
-  <div class=" mb-4 d-flex" *ngIf="album">
+  <div class=" mb-4 d-flex">
     <img
       [src]="album.cover_medium"
       [title]="album.title"
@@ -45,12 +45,10 @@
 </div>
 
 
-<div *ngIf="isLoading==true" class="image" >
+<div *ngIf="isLoading===true" class="image" >
   <img src="assets/icons/waitingGif.gif"/>
 </div>
-<div *ngIf="isLoading==false && album== undefined ">
-  <app-error404></app-error404>
-</div>
+
 <div><app-pub></app-pub></div>
 
 </body>

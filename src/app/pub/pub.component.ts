@@ -7,14 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PubComponent implements OnInit {
 
-  constructor() { }
+  public constructor() { }
 
   public numPub:number=Math.floor(Math.random() * (9)) + 1;
   public pubVisible:boolean=true;
 
-  ngOnInit(): void {
-
-  }
+  public ngOnInit(): void {}
 
   public onClickClose(){
     this.pubVisible=false;

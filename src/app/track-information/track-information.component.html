@@ -2,7 +2,7 @@
   <div class="container" *ngIf="track">
   <h1><span label label-default>{{ track.title }}</span></h1>
 
-  <div class=" mb-4 d-flex" *ngIf="track">
+  <div class=" mb-4 d-flex">
     <div class="text">
       <div class="audio">
         <audio preload="auto" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio>
@@ -54,12 +54,10 @@
         </div>
   </div>
 </div>
-    <div *ngIf="isLoading==true" class="image" >
+    <div *ngIf="isLoading===true" class="image" >
       <img src="assets/icons/waitingGif.gif"/>
     </div>
-  <div *ngIf="isLoading==false && track== undefined ">
-    <app-error404></app-error404>
-  </div>
+
   </div>
   <div><app-pub></app-pub></div>
 </body>

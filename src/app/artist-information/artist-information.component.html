@@ -3,7 +3,7 @@
 <div class="container">
       <h1><span label label-default>{{ artist.name }}</span></h1>
 
-    <div class=" mb-4 d-flex" *ngIf="artist">
+    <div class=" mb-4 d-flex">
       <img
         [src]="artist.picture_medium"
         [title]="artist.name"
@@ -51,7 +51,7 @@
         <a href="http://localhost:4200/album/{{album.id}}"><img [src]="album.cover_big" [title]="album.label"/></a>
         <p>{{ album.title }}</p>
         <p class="title">Nombre de fans</p>
-        <p>{{ album.fans }}</p>
+        <p>{{ album.fans | numberConversion }}</p>
         <p class="title">Date de parution</p>
         <p>{{ album.release_date }}</p>
       </div>
@@ -59,11 +59,9 @@
   </div>
 </div>
 </div>
-  <div *ngIf="isLoading==true" class="image" >
+  <div *ngIf="isLoading===true" class="image" >
     <img src="assets/icons/waitingGif.gif"/>
   </div>
-  <div *ngIf="isLoading==false && artist== undefined ">
-  <app-error404></app-error404>
-</div>
+
   <div><app-pub></app-pub></div>
 </body>

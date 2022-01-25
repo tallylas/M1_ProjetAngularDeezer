@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {delay} from "rxjs";
 
 @Component({
   selector: 'app-error404',
@@ -10,13 +9,6 @@ export class Error404Component implements OnInit {
 
   public constructor() { }
 
-  public ngOnInit(): void {
-    this.wait(5000);
-  }
-  private wait( ms: number){
-    var temps=2000;
-    setTimeout("alert(message);",temps);
-    setTimeout("document.getElementsByClassName('aAfficherPlusTard').style.display='block';",temps+1);
-  }
-}
+  public ngOnInit(): void {}
 
+}

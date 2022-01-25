@@ -16,6 +16,7 @@ import { TrackMysteryComponent } from './track-mystery/track-mystery.component';
 import { AlbumInformationComponent } from './album-information/album-information.component';
 import { Error404Component } from './error404/error404.component';
 import { PubComponent } from './pub/pub.component';
+import { MissingComponent } from './missing/missing.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PubComponent } from './pub/pub.component';
     TrackMysteryComponent,
     AlbumInformationComponent,
     Error404Component,
-    PubComponent
+    PubComponent,
+    MissingComponent
   ],
   imports: [
     BrowserModule,

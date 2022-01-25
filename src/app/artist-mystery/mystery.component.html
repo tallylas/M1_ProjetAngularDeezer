@@ -1,6 +1,6 @@
 <body>
   <button type="button" class="btn btn-light" (click)="reloadPage()">Découvrir un autre artiste</button>
-<div *ngIf="artist!=undefined && isLoading==false" >
+<div *ngIf="artist && isLoading===false" >
 <div class="container">
   <h1><span label label-default>{{ artist.name }}</span></h1>
 
@@ -53,7 +53,7 @@
         <p class="title">Titre de l'album</p>
         <p>{{ album.title }}</p>
         <p class="title">Nombre de fans</p>
-        <p>{{ album.fans }}</p>
+        <p>{{ album.fans | numberConversion }}</p>
         <p class="title">Date de parution</p>
         <p>{{ album.release_date }}</p>
       </div>
@@ -62,11 +62,9 @@
 </div>
 </div>
 
-  <div *ngIf="isLoading==true" class="image" >
+  <div *ngIf="isLoading===true" class="image" >
     <img src="assets/icons/waitingGif.gif"/>
   </div>
-<div *ngIf="isLoading==false && artist== undefined ">
-  <app-error404></app-error404>
-</div>
+
   <div><app-pub></app-pub></div>
 </body>

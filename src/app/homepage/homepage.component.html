@@ -1,42 +1,42 @@
 <body>
 
-<div *ngIf="isLoading==true" class="image">
+<div *ngIf="isLoading===true" class="image">
   <img src="assets/icons/waitingGif.gif"/>
 </div>
 
 <h1>Les mots du moment</h1>
 
 <div class="button-div">
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Soleil')" *ngIf="c1==true || c6==true || c9==true">Soleil</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Nature')" *ngIf="c2==true || c7==true || c9==true">Nature</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Amour')" *ngIf="c3==true || c6==true || c1==true || c4==true">Amour</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Joli')" *ngIf="c4==true || c8==true || c9==true">Joli</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Bateau')" *ngIf="c5==true || c8==true || c10==true">Bateau</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Nuit')" *ngIf="c1==true || c6==true || c3==true">Nuit</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Sport')" *ngIf="c2==true || c7==true || c1==true || c10==true">Sport</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Plage')" *ngIf="c3==true || c7==true || c4==true || c5==true">Plage</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Océan')" *ngIf="c4==true || c6==true || c2==true || c10==true">Océan</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Libre')" *ngIf="c5==true || c2==true || c9==true">Libre</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Evasion')" *ngIf="c1==true || c8==true || c10==true">Evasion</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Lumière')" *ngIf="c2==true || c6==true || c7==true || c10==true">Lumière</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Mélancolie')" *ngIf="c3==true || c8==true || c9==true">Mélancolie</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Heureux')" *ngIf="c4==true || c7==true || c5==true">Heureux</button>
-<button type="button" class="btn btn-outline-dark" (click)="searchButton('Fierté')" *ngIf="c5==true || c3==true || c8==true">Fierté</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Soleil')" *ngIf="c1===true || c6===true || c9===true">Soleil</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Nature')" *ngIf="c2===true || c7===true || c9===true">Nature</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Amour')" *ngIf="c3===true || c6===true || c1===true || c4===true">Amour</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Joli')" *ngIf="c4===true || c8===true || c9===true">Joli</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Bateau')" *ngIf="c5===true || c8===true || c10===true">Bateau</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Nuit')" *ngIf="c1===true || c6===true || c3===true">Nuit</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Sport')" *ngIf="c2===true || c7===true || c1===true || c10===true">Sport</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Plage')" *ngIf="c3===true || c7===true || c4===true || c5===true">Plage</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Océan')" *ngIf="c4===true || c6===true || c2===true || c10===true">Océan</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Libre')" *ngIf="c5===true || c2===true || c9===true">Libre</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Evasion')" *ngIf="c1===true || c8===true || c10===true">Evasion</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Lumière')" *ngIf="c2===true || c6===true || c7===true || c10===true">Lumière</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Mélancolie')" *ngIf="c3===true || c8===true || c9===true">Mélancolie</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Heureux')" *ngIf="c4===true || c7===true || c5===true">Heureux</button>
+<button type="button" class="btn btn-outline-dark" (click)="searchButton('Fierté')" *ngIf="c5===true || c3===true || c8===true">Fierté</button>
 </div>
 
-  <div class="row" *ngIf="afficherInfos==true">
-    <div *ngIf="isLoading==false">
+  <div class="row" *ngIf="afficherInfos===true">
+    <div *ngIf="isLoading===false">
     <div class="column" *ngFor="let track of tracks">
       <div class="card">
         <a href="http://localhost:4200/artist/{{track.artist.id}}"><img [src]="track.artist.picture" [title]="track.title"/></a>
         <p>{{ track.title }}</p>
-        <p class="title"> {{ track.artist.name }}</p>
+        <p class="title-album">Album<br/>{{ track.album.title }}</p>
+        <p class="title">Artiste<br/>{{ track.artist.name }}</p>
         <p><audio preload="none" controls="controls"><source src="{{ track.preview }}" type="audio/mpeg"/></audio></p>
       </div>
     </div>
     </div>
   </div>
 <div><app-pub></app-pub></div>
-<!--ajouter erreur 404 si besoin-->
 </body>
 

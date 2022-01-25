@@ -16,24 +16,24 @@ export class MysteryComponent implements OnInit {
   public artist: IArtist | undefined;
   public albums: IAlbum[] = [];
   public tracks: ITrack[] = [];
-  public errorMessage: string = "";
+  private errorMessage: string = "";
   public isLoading:boolean=true;
 
-  constructor(
+  public constructor(
     private artistsService: ArtistsService,
     private route: ActivatedRoute,
     private router: Router
   ) {
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     let id = Math.floor(Math.random() * (1000)) + 1;
     if (id) {
-      this.GetArtistDetails(id);
+      this.getArtistDetails(id);
     }
   }
 
-  GetArtistDetails(id: number) {
+  private getArtistDetails(id: number) {
     forkJoin([
       this.artistsService.getArtist(id),
       this.artistsService.getAlbums(id),
@@ -46,12 +46,18 @@ export class MysteryComponent implements OnInit {
             (this.albums = Results[1]),
             (this.tracks = Results[2]);
           this.isLoading=false;
+          if (this.artist.id === undefined){
+            this.router.navigate(['/missing']);
+          }
         },
-        error: err => (this.errorMessage = err)
+        error: err => {
+          this.errorMessage = err,
+            this.router.navigate(['/error404']);
+        }
       });
   }
 
-  reloadPage() {
+  public reloadPage() {
     window.location.reload();
   }
 }

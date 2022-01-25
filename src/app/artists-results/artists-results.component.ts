@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {IArtist} from "../../Interfaces/IArtist";
 import {ArtistsService} from "../artists.service";
 
@@ -9,19 +10,21 @@ import {ArtistsService} from "../artists.service";
 })
 export class ArtistsResultsComponent {
 
-  public errorMessage = '';
+  private errorMessage = '';
   public artists: IArtist[] = [];
+  public searchString: string = "";
 
-  searchString: string = "";
+  public constructor(private artistsService: ArtistsService, private router: Router) {}
 
-  constructor(private artistsService: ArtistsService) {}
-
-  searchArtist() {
+  public searchArtist() {
     this.artistsService.getArtistList(this.searchString).subscribe({
       next: artists => {
         this.artists = artists;
       },
-      error: err => (this.errorMessage = err)
+      error: err => {
+        this.errorMessage = err,
+          this.router.navigate(['/error404']);
+      }
     });
   }
 

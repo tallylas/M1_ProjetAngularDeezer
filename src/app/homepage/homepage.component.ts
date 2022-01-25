@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IArtist } from 'src/Interfaces/IArtist';
 import { ITrack } from 'src/Interfaces/ITrack';
 import { TracksService } from '../tracks.service';
@@ -10,12 +11,12 @@ import { TracksService } from '../tracks.service';
 })
 export class HomepageComponent implements OnInit {
 
-  public errorMessage = '';
+  private errorMessage = '';
   public tracks: ITrack[] = [];
   public searchStringButton: string = "";
   public isLoading:boolean=false;
   public afficherInfos:boolean=false;
-  public combinaison:number=0;
+  private combinaison:number=0;
   public c1:boolean=false;
   public c2:boolean=false;
   public c3:boolean=false;
@@ -27,7 +28,7 @@ export class HomepageComponent implements OnInit {
   public c9:boolean=false;
   public c10:boolean=false;
 
-  public constructor(private tracksService : TracksService) {}
+  public constructor(private tracksService : TracksService, private router : Router) {}
 
   public ngOnInit(): void {
     //Tirer une combinaison au hasard
@@ -95,7 +96,10 @@ export class HomepageComponent implements OnInit {
         this.tracks = tracks;
         this.isLoading=false;
       },
-      error: err => (this.errorMessage = err)
+      error: err => {
+        this.errorMessage = err,
+          this.router.navigate(['/error404']);
+      }
     });
   }
 

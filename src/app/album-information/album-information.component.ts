@@ -14,7 +14,7 @@ export class AlbumInformationComponent implements OnInit {
 
   public album: IAlbum | undefined;
   public tracks: ITrack[] = [];
-  public errorMessage: string = "";
+  private errorMessage: string = "";
   public isLoading:boolean=true;
 
   public constructor(
@@ -30,7 +30,7 @@ export class AlbumInformationComponent implements OnInit {
       this.getAlbumDetails(id);
     }
   }
-  getAlbumDetails(id: number) {
+  private getAlbumDetails(id: number) {
     forkJoin([
       this.albumsService.getAlbum(id),
       this.albumsService.getTracks(id)
@@ -41,8 +41,14 @@ export class AlbumInformationComponent implements OnInit {
           (this.album = Results[0]),
             (this.tracks = Results[1]);
           this.isLoading=false;
+          if (this.album.id === undefined){
+            this.router.navigate(['/missing']);
+          }
         },
-        error: err => (this.errorMessage = err)
+        error: err => {
+          this.errorMessage = err,
+            this.router.navigate(['/error404']);
+        }
       });
   }
 

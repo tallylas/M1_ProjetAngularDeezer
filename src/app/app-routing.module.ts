@@ -8,6 +8,8 @@ import {TracksResultsComponent} from "./tracks-results/tracks-results.component"
 import {TrackInformationComponent} from "./track-information/track-information.component";
 import {TrackMysteryComponent} from "./track-mystery/track-mystery.component";
 import {AlbumInformationComponent} from "./album-information/album-information.component";
+import {Error404Component} from "./error404/error404.component";
+import {MissingComponent} from "./missing/missing.component";
 
 const routes : Routes = [
   {path : 'artistMystery', component : MysteryComponent},
@@ -17,11 +19,11 @@ const routes : Routes = [
   {path : 'track', component : TracksResultsComponent},
   {path : 'track/:id', component : TrackInformationComponent},
   {path : 'album/:id', component : AlbumInformationComponent},
+  {path : 'error404', component : Error404Component},
+  {path : 'missing', component : MissingComponent},
   {path : '', component : HomepageComponent},
   {path : '**', component : HomepageComponent}
 ]
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

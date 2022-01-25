@@ -17,24 +17,23 @@ export class TrackMysteryComponent implements OnInit {
   public artist: IArtist | undefined;
   public album: IAlbum | undefined;
   public tracks: ITrack[] = [];
-  public errorMessage: string = "";
+  private errorMessage: string = "";
   public isLoading:boolean=true;
 
-  constructor(
+  public constructor(
     private tracksService: TracksService,
     private route: ActivatedRoute,
     private router: Router
-  ) {
-  }
+  ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     let id = Math.floor(Math.random() * (100000)) + 17800000;
     if (id) {
-      this.GetTrackDetails(id);
+      this.getTrackDetails(id);
     }
   }
 
-  GetTrackDetails(id: number) {
+  private getTrackDetails(id: number) {
     forkJoin([
       this.tracksService.getTrack(id)
     ])
@@ -43,12 +42,18 @@ export class TrackMysteryComponent implements OnInit {
         next: Results => {
           (this.track = Results[0]);
           this.isLoading=false;
+          if (this.track.id === undefined){
+            this.router.navigate(['/missing']);
+          }
         },
-        error: err => (this.errorMessage = err)
+        error: err => {
+          this.errorMessage = err,
+            this.router.navigate(['/error404']);
+        }
       });
   }
 
-  reloadPage() {
+  public reloadPage() {
     window.location.reload();
   }
 

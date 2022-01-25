@@ -12,7 +12,7 @@ export class AlbumsService {
 
   private albumUrl: string = "";
   private tracksUrl: string = "";
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
   public getAlbum(id: number): Observable<IAlbum> {
     this.albumUrl =
@@ -22,7 +22,6 @@ export class AlbumsService {
       catchError(this.handleError)
     );
   }
-
 
   public getTracks(id: number): Observable<ITrack[]> {
     this.tracksUrl = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}/tracks&offset=0`;

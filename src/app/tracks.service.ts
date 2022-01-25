@@ -52,7 +52,6 @@ export class TracksService {
     } else {
       errorMessage = `Le serveur a retourné le code : ${err.status}, le message d'erreur est : ${err.message}`;
     }
-
     return throwError(errorMessage);
   }
 

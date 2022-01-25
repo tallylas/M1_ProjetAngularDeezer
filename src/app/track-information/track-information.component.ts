@@ -16,23 +16,24 @@ export class TrackInformationComponent implements OnInit {
   public artist: IArtist | undefined;
   public albums: IAlbum[] = [];
   public track: ITrack | undefined;
-  public errorMessage: string = "";
+  private errorMessage: string = "";
   public isLoading:boolean=true;
 
-  constructor(
+  public constructor(
     private tracksService: TracksService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     const param = this.route.snapshot.paramMap.get('id');
     if (param) {
       const id = +param;
-      this.GetTrackDetails(id);
+      this.getTrackDetails(id);
     }
   }
-  GetTrackDetails(id: number) {
+
+  private getTrackDetails(id: number) {
     forkJoin([
       this.tracksService.getTrack(id)
     ])
@@ -41,12 +42,15 @@ export class TrackInformationComponent implements OnInit {
         next: Results => {
           (this.track = Results[0])
           this.isLoading=false;
+          if (this.track.id === undefined){
+            this.router.navigate(['/missing']);
+          }
         },
-        error: err => (this.errorMessage = err)
+        error: err => {
+          this.errorMessage = err,
+            this.router.navigate(['/error404']);
+        }
       });
-  }
-  onBack(): void {
-    this.router.navigate(['/track']);
   }
 
 }
