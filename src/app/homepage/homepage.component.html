@@ -4,9 +4,9 @@
   <img src="assets/icons/waitingGif.gif"/>
 </div>
 
-<h1>Les mots du moment</h1>
+<h1 [@bounce]="side ? 'left' : 'right'">Les mots du moment</h1>
 
-<div class="button-div">
+<div class="button-div" (mouseenter)="changeSide()" (mouseleave)="changeSide()">
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Soleil')" *ngIf="c1===true || c6===true || c9===true">Soleil</button>
   <button type="button" class="btn btn-outline-dark" (click)="searchButton('Mot')" *ngIf="c5===true || c10===true">Mot</button>
 <button type="button" class="btn btn-outline-dark" (click)="searchButton('Nature')" *ngIf="c2===true || c7===true || c9===true">Nature</button>

@@ -3,11 +3,24 @@ import { Router } from '@angular/router';
 import { IArtist } from 'src/Interfaces/IArtist';
 import { ITrack } from 'src/Interfaces/ITrack';
 import { TracksService } from '../tracks.service';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
+  animations: [
+    trigger('bounce', [
+      state('left', style({
+        transform: 'rotate(-10deg)'
+      })),
+      state('right', style({
+        transform: 'rotate(10deg)'
+      })),
+      transition('left => right', animate('0.7s 100ms ease-in')),
+      transition('right => left', animate('0.7s 100ms ease-out'))
+    ]),
+  ]
 })
 export class HomepageComponent implements OnInit {
 
@@ -27,10 +40,12 @@ export class HomepageComponent implements OnInit {
   public c8:boolean=false;
   public c9:boolean=false;
   public c10:boolean=false;
+  public side = true;
 
   public constructor(private tracksService : TracksService, private router : Router) {}
 
   public ngOnInit(): void {
+
     //Tirer une combinaison au hasard
     this.combinaison = Math.floor(Math.random() * (9)) + 1;
 
@@ -101,6 +116,10 @@ export class HomepageComponent implements OnInit {
           this.router.navigate(['/error404']);
       }
     });
+  }
+
+  public changeSide() {
+    this.side = !this.side;
   }
 
 }

@@ -17,6 +17,7 @@ import { AlbumInformationComponent } from './album-information/album-information
 import { Error404Component } from './error404/error404.component';
 import { PubComponent } from './pub/pub.component';
 import { MissingComponent } from './missing/missing.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,8 @@ import { MissingComponent } from './missing/missing.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
